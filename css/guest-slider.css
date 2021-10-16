@@ -1,0 +1,39 @@
+.home__reservations__guests__slider-container {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 102%;
+    left: 10%;
+    border: 1px solid var(--secondary-light);
+    height: 40px;
+    width: 80%;
+    background-color: inherit;
+    border-radius: 5px;
+}
+
+.home__reservations__guests__slider[type="range"] {
+    -webkit-appearance: none; 
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--secondary-lighter);
+    height: 4px;
+}
+
+.home__reservations__guests__slider::-webkit-slider-thumb {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    /* background-color: var(--primary100); */
+    background: radial-gradient(circle, var(--white) 15%, var(--primary) 35%);
+   
+}
+
+.home__reservations__guests__slider::-webkit-slider-thumb:hover {
+    transition: 0.25s;
+    /* background: radial-gradient(circle, var(--white) 0%, var(--primary) 50%); */
+    background-color: var(--primary);
+}

@@ -1,0 +1,606 @@
+.home {}
+
+.home-cover {
+    background-image: url(../img/home-page/cover-wide.jpg);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 320px;
+}
+
+@media (min-width: 769px) {
+    .home-cover {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 800px;
+    }
+}
+
+/* ====================
+    Logo 
+==================== */
+
+.home__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66vw;
+    min-height: 210px;
+    transition:425ms ease-in-out;
+}
+
+.home__logo[slide="on"] {
+    height: 180px;
+    min-height: 0;
+    transform: translateY(50px);
+}
+
+.home__logo-container {
+    position: relative;
+    height: 100px;
+    width: 100%;
+}
+
+.home__logo-effect {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.933);
+    filter: blur(20px);
+    width: calc(20vw + 120px);
+    min-height: 60px;
+}
+
+.home__logo-pic {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/logo/oporto-city-view-_480_clip_transparent.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: calc(20vw + 120px);
+    min-height: 100px;
+}
+
+@media (min-width: 769px) {
+    .home__logo, .home__logo[slide='on'] {
+        align-items: flex-end;
+        min-height: 150px;
+        height: 300px;
+        transform: translateY(0);
+    }
+    .home__logo-pic {
+        width: calc(220px + 10vw);
+        max-width: 400px;
+    }
+    .home__logo-effect {
+        width: calc(220px + 10vw);
+        max-width: 400px;
+    }
+}
+
+/* ====================
+    Reservations 
+==================== */
+
+.home__reservations {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 320px;
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 10px 5px;
+}
+
+.home__reservations-cols {
+    margin: 0.4em 0.2em;
+    min-height: 60px;
+    min-width: 320px;
+    width: 100%;
+}
+
+@media (min-width: 769px) {
+    .home__reservations {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1000px;
+    }
+    .home__reservations-cols {
+        flex-basis: 400px;
+        min-height: 65px;
+        min-width: 0;
+    }
+}
+
+/* ===== Date ===== */
+
+.home__reservations__date {
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.home__reservations__date-button {
+    border: 1px solid var(--secondary);
+    background-color: var(--white);
+    box-shadow: 0 0 2px 1px var(--secondary-light);
+    border-radius: 5px;
+    width: 49%;
+    padding: 10px;
+}
+
+.home__reservations__date__text {
+    margin: 0;
+    text-align: center;
+}
+
+.home__reservations__date__text::after {
+    content: "";
+    background-color: var(--primary);
+    display: block;
+    width: 80px;
+    height: 1px;
+    margin: 0 auto;
+}
+
+.home__reservations_select-date {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-top: 12px;
+}
+
+.home__reservations__date-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home__reservations__date__day {
+    font-size: 2.2rem;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.home__reservations__date-secondary {
+    margin-right: 2em;
+}
+
+.home__reservations__date-secondary>p {
+    margin: 0;
+    line-height: 1rem;
+}
+
+.home__reservations__date__month {
+    font-size: 1rem;
+}
+
+.home__reservations__date__week-day-comma {
+    display: none;
+}
+
+.home__reservations__date-button.select {
+    box-shadow: 0 0 10px black;
+    transform: scale(1.05);
+    transition: .25s;
+}
+
+@media (min-width: 769px) {
+    .home__reservations__date {
+        order: -2
+    }
+    .home__reservations__date-button {
+        padding: 0;
+    }
+    .home__reservations__date__text {
+        font-size: 0.8rem;
+    }
+    .home__reservations_select-date {
+        margin: 0;
+    }
+    .home__reservations__date-primary {
+        padding-right: 12px;
+    }
+    .home__reservations__date__day {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+    .home__reservations__date-secondary {
+        display: flex;
+        margin-right: 0;
+    }
+    .home__reservations__date__month {}
+    .home__reservations__date__week-day {
+        order: -1;
+        padding-right: 5px;
+    }
+    .home__reservations__date__week-day-comma {
+        display: inline-block;
+    }
+}
+
+/* ===== Calendar ===== */
+
+.home__reservations__calendar {}
+
+.home__reservations__calendar {
+    display: none;
+    justify-content: center;
+    flex: 1;
+    flex-basis: 360px;
+    max-width: 360px;
+    position: relative;
+    max-height: 365px;
+    margin: 0.4em auto;
+    background-color: var(--primary100);
+    border: 1px solid var(--secondary);
+    border-radius: 3px;
+    box-shadow: 0 0 2px 1px var(--secondary-light);
+}
+
+.home__reservations__calendar::before {
+    content: "";
+    border-bottom: 10px solid var(--primary100);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    bottom: 100%;
+    left: 30px;
+    transition: 0.6s;
+}
+
+.home__reservations__calendar[status="slideArrow"]::before {
+    left: calc(100% - 50px);
+}
+
+.home__reservations__calendar-container {
+    display: flex;
+    flex-direction: column;
+    width: 315px;
+    margin-bottom: 20px;
+}
+
+.home__reservations__calendar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.home__reservations__calendar__header-month {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    display: inline-block;
+    margin: 0;
+}
+
+.home__reservations__calendar__header__scroll {
+    padding: 5px 10px;
+}
+
+.home__reservations__calendar__weekDays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    width: 100%;
+    list-style: none;
+    padding: 0em 0;
+    margin: 0;
+    cursor: default;
+}
+
+.home__reservations__calendar__days-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    ;
+    grid-template-rows: repeat(6, 1fr);
+    width: 100%;
+    height: 270px;
+    background-color: white;
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.home__reservations__calendar__padding-days {}
+
+.home__reservations__calendar__days {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.home__reservations__calendar__days:hover:not([status=watermarked], [selected=on], [inSelected=on], [outSelected=on]) {
+    background-color: rgb(194, 194, 194);
+}
+
+.home__reservations__calendar__days[status=watermarked] {
+    color: var(--secondary-light);
+    cursor: default;
+}
+
+.home__reservations__calendar__days[inSelected=on] {
+    border-radius: 50% 5px 5px 50%;
+    background-color: black;
+    color: white;
+}
+
+.home__reservations__calendar__days[outSelected=on] {
+    border-radius: 5px 50% 50% 5px;
+    background-color: black;
+    color: white;
+}
+
+.home__reservations__calendar__days[selected=on] {
+    background-color: var(--secondary-lighter);
+    height: 40px;
+    margin: auto 0;
+}
+
+.home__reservations__calendar__days[selected=on]:hover {
+    background-image: radial-gradient(rgb(194, 194, 194) 0, rgb(194, 194, 194) 60%, transparent 70%)
+}
+
+@media (min-width: 769px) {
+    .home__reservations__calendar {
+        order: 1;
+        flex-basis: 750px;
+        max-width: 690px;
+        /* gap: 20px; */
+        /* low support */
+    }
+    .home__reservations__calendar-container {
+        margin-left: 20px;
+    }
+    .home__reservations__calendar-container:nth-child(n + 2) {
+        margin-right: 20px;
+    }
+    .home__reservations__calendar-container:first-child .month-scroll-right {
+        visibility: hidden;
+    }
+    .home__reservations__calendar-container:last-child .month-scroll-left {
+        visibility: hidden;
+    }
+    .home__reservations__calendar::before {
+        display: none;
+    }
+    .home__reservations__calendar__days {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== Guests ===== */
+
+.home__reservations__guests {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--secondary);
+    background-color: var(--white);
+    box-shadow: 0 0 2px 1px var(--secondary-light);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.home__reservations__guests__text {
+    margin: 0;
+    font-size: 1.6rem;
+    padding-left: 20px;
+    user-select: none;
+}
+
+.home__reservations__guests__quantity {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    margin: 0;
+    user-select: none;
+}
+
+.home__reservations__guests__quantity-nr {
+    border: 1px solid var(--secondary);
+    background-color: rgb(224, 224, 224);
+    display: inline-block;
+    text-align: center;
+    font-size: 1.4rem;
+    width: calc(1.6rem + 10px);
+    margin: 0 5px;
+}
+
+.home__reservations__guests__quantity-change {
+    font-size: 1.6rem;
+}
+
+.home__reservations__guests__quantity-less {}
+
+.home__reservations__guests__quantity-plus {}
+
+@media (min-width: 769px) {
+    .home__reservations__guests {
+        order: -1;
+        flex-basis: 200px;
+    }
+    .home__reservations__guests__text {
+        font-size: 1.2rem;
+    }
+    .home__reservations__guests__quantity-change {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+    }
+    .home__reservations__guests__quantity-less {
+        order: 1;
+        height: 17.2px;
+        width: 16px;
+    }
+    .home__reservations__guests__quantity-plus {
+        height: 17.2px;
+        width: 16px;
+    }
+    .icon-up-dir-1::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50%;
+    }
+    .icon-up-dir-1:hover:before {
+        color: var(--secondary-light);
+    }
+    .icon-up-dir-1:active:before {
+        color: var(--secondary-lighter);
+    }
+    .icon-down-dir-1::before {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50%;
+    }
+    .icon-down-dir-1:hover:before {
+        color: var(--secondary-light);
+    }
+    .icon-down-dir-1:active::before {
+        color: var(--secondary-lighter);
+    }
+}
+
+/* ===== Search ===== */
+
+.home__reservations__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--secondary);
+    background-color: var(--primary);
+    box-shadow: 0 1px 1px 1px var(--secondary-light), inset -2px -2px 2px rgb(107, 79, 54), inset 2px 2px 2px rgb(226, 186, 149);
+    border-radius: 5px;
+    user-select: none;
+    text-decoration: none;
+    color: black;
+}
+
+.home__reservations__search:hover {
+    background-color: var(--primary100);
+    color: inherit;
+}
+
+.home__reservations__search:active {
+    box-shadow: inset -2px -2px 2px rgb(226, 186, 149), inset 2px 2px 2px rgb(107, 79, 54);
+    background-color: var(--primary100);
+}
+
+.home__search__text {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.2em 0;
+}
+
+.home__reservations__search:active .home__search__text {
+    transform: translate(1px, 1px);
+}
+
+@media (min-width: 769px) {
+    .home__reservations__search {
+        flex-basis: 100px;
+    }
+    .home__search__text {
+        font-size: 1.2rem;
+    }
+}
+
+/* About us */
+
+.home__aboutus {}
+
+.home__aboutus-title {}
+
+.home__aboutus-p {
+    text-align: center;
+}
+
+@media (min-width: 769px) {}
+
+/*  Services */
+
+.home__informative__services {}
+
+.home__informative__services-list {}
+
+.home__informative__services-icon {
+    font-size: 36px;
+}
+
+.home__informative__services-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__informative__services-item:not(:last-child) {
+    padding-bottom: 20px;
+}
+
+.home__informative__services-item-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 80px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.home__informative__services-item-description {
+    margin: 0 40px;
+}
+
+@media (min-width: 769px) {
+    .home__informative__services {}
+    .services-wrapper {
+        max-width: 1100px;
+    }
+    .home__informative__services-list {}
+    .home__informative__services-icon {
+        font-size: 48px;
+    }
+    .home__informative__services-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .home__informative__services-item:nth-child(2n) {
+        justify-content: flex-end;
+    }
+    .home__informative__services-item-tittle {
+        flex-basis: 190px;
+        min-width: 190px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .home__informative__services-item:nth-child(2n) .home__informative__services-item-tittle {
+        order: 1;
+    }
+    .home__informative__services-item-description {
+        margin: 0 40px;
+    }
+}
+
+@media (min-width: 481px) {}
+
+@media (min-width: 769px) {}
+
+@media (min-width: 1025px) {}

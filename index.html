@@ -1,0 +1,567 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Porto City View</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+  <link rel="shortcut icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet">
+  <link rel="stylesheet" href="font-icons/fontello-arrows/css/arrow.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/guest-slider.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="header__logo">
+      <a href="index.html"><img class="header__logo__pic" src="img/logo/oporto-city-view-_480_transparent.png" /></a>
+    </div>
+
+    <div class="header__language click-no-blink">
+      <p class="language-text">PT</p>
+      <p class="language-text">EN</p>
+    </div>
+
+    <div class="header__navigation">
+
+      <i id="header__navigation__on" class="fas fa-bars click-no-blink"></i>
+
+      <nav class="navigation">
+
+        <div class="navigation__header">
+          <i id="header__navigation__off" class="fas fa-times click-no-blink"></i>
+        </div>
+
+        <ul class="navigation__list" page="one">
+          <li class="one">
+            <a id="nav__home" class="navigation__list__button" href="index.html" page="on">Home</a>
+          </li>
+          <li class="two">
+            <a id="nav__accommodations" class="navigation__list__button" href="accommodations.html">Accommodations</a>
+          </li>
+          <li class="three">
+            <a id="navigation__information" class="navigation__list__button" href="information.html">Information</a>
+          </li>
+          <hr class="navigation__underline">
+        </ul>
+
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main class="home">
+
+    <section class="home-cover">
+
+      <div class="home__logo">
+        <div class="home__logo-container">
+          <div class="home__logo-effect"></div>
+          <div class="home__logo-pic"></div>
+        </div>
+      </div>
+
+      <div class="home__reservations">
+
+        <!-- Date -->
+        <div class="home__reservations__date home__reservations-cols">
+
+          <div class="home__reservations__date-button click-no-blink" id="check-in">
+            <p class="home__reservations__date__text"> Check-in</p>
+            <p id="check-in-select-date" class="home__reservations_select-date">Select Date</p>
+            <div class="home__reservations__date-primary">
+              <p class="home__reservations__date__day" id="check-in-day"></p>
+              <div class="home__reservations__date-secondary">
+                <p class="home__reservations__date__month" id="check-in-month"></p>
+                <p class="home__reservations__date__week-day" id="check-in-week-day"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="home__reservations__date-button click-no-blink" id="check-out">
+            <p class="home__reservations__date__text"> Check-out</p>
+            <p id="check-out-select-date" class="home__reservations_select-date">Select Date</p>
+            <div class="home__reservations__date-primary">
+              <p class="home__reservations__date__day" id="check-out-day"></p>
+              <div class="home__reservations__date-secondary">
+                <p class="home__reservations__date__month" id="check-out-month"></p>
+                <p class="home__reservations__date__week-day" id="check-out-week-day"></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Calendar -->
+        <div class="home__reservations__calendar">
+
+          <!-- <div class="home__reservations__calendar-wrapper"> -->
+
+          <!-- 1st calendar -->
+          <div class="home__reservations__calendar-container">
+
+            <div class="home__reservations__calendar__header">
+
+              <span class="home__reservations__calendar__header__scroll month-scroll-left click-no-blink"><i
+                  class="fas fa-chevron-left"></i></span>
+              <p class="home__reservations__calendar__header-month"></p>
+              <span class="home__reservations__calendar__header__scroll month-scroll-right click-no-blink"><i
+                  class="fas fa-chevron-right"></i></span>
+            </div>
+
+            <ul class="home__reservations__calendar__weekDays">
+              <li>Sun</li>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+            </ul>
+
+            <ul class="home__reservations__calendar__days-container">
+
+            </ul>
+
+          </div>
+
+
+          <!-- 2nd calendar -->
+          <div class="home__reservations__calendar-container mq-l">
+
+            <div class="home__reservations__calendar__header">
+
+              <span class="home__reservations__calendar__header__scroll month-scroll-left click-no-blink"><i
+                  class="fas fa-chevron-left"></i></span>
+              <p class="home__reservations__calendar__header-month"></p>
+              <span class="home__reservations__calendar__header__scroll month-scroll-right click-no-blink"><i
+                  class="fas fa-chevron-right"></i></span>
+            </div>
+
+            <ul class="home__reservations__calendar__weekDays">
+              <li>Sun</li>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+            </ul>
+
+            <ul class="home__reservations__calendar__days-container click-no-blink">
+
+            </ul>
+
+          </div>
+          <!-- </div> -->
+
+        </div>
+
+        <!-- Guests -->
+        <div class="home__reservations__guests home__reservations-cols">
+
+          <p class="home__reservations__guests__text">Guests</p>
+          <div class="home__reservations__guests__quantity">
+
+            <div class="home__reservations__guests__quantity-less mq-s">
+              <i class="fas fa-minus-circle"></i>
+            </div>
+
+            <div class="home__reservations__guests__quantity-nr click-no-blink"></div>
+
+            <div class="home__reservations__guests__quantity-plus mq-s">
+              <i class="fas fa-plus-circle"></i>
+            </div>
+
+
+            <div class="home__reservations__guests__quantity-change mq-l">
+
+              <div class="home__reservations__guests__quantity-less">
+                <i class="icon-down-dir-1"></i>
+              </div>
+
+              <div class="home__reservations__guests__quantity-plus">
+                <i class="icon-up-dir-1"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- drop down animation -->
+          <div class="home__reservations__guests__slider-container">
+            <input class="home__reservations__guests__slider" type="range" list="tickmarks" min="1" max="8" value="2">
+
+          </div>
+        </div>
+
+        <!-- Search -->
+        <a class="home__reservations__search home__reservations-cols click-no-blink" target="_blank">
+          <p class="home__search__text">Search</p>
+        </a>
+
+    </section>
+
+    <div class="wrapper-m">
+
+      <div class="home__aboutus">
+        <h2 class="home__aboutus-title t-h2">About us</h2>
+
+        <p class="home__aboutus-p">Our vision is to be market leaders, committed to the development of sustainable
+          tourism, in terms of local accommodation. We are recognized as a quality company, with a strong focus on the
+          customer and our partners. Our values ​​are governed by commitment, adaptability and sustainability in our
+          activities. Feel the spirit and authenticity of the city of Porto, enjoying the most emblematic places in the
+          city.</p>
+      </div>
+    </div>
+
+    <div class="wrapper-m">
+
+      <div class="home__informative__services services-wrapper wrapper">
+
+        <h2 class="t-h2">Our Services</h2>
+
+        <dl class="home__informative__services-list">
+
+          <div class="home__informative__services-item" >
+            <dt class="home__informative__services-item-tittle">
+              <span class="home__informative__services-icon material-icons-outlined">free_breakfast</span>
+              Breakfast
+            </dt>
+            <dd class="home__informative__services-item-description">
+              We offer a breakfast delivery service to your accommodation at an additional cost.
+            </dd>
+          </div>
+
+          <div class="home__informative__services-item" >
+            <dt class="home__informative__services-item-tittle">
+              <span class="home__informative__services-icon material-icons-outlined">tram</span>
+              Tours
+            </dt>
+            <dd class="home__informative__services-item-description">
+              We can help you plan your tours with our partners.
+            </dd>
+          </div>
+
+          <div class="home__informative__services-item" >
+            <dt class="home__informative__services-item-tittle">
+              <span class="home__informative__services-icon material-icons-round">wifi</span>
+              Wi-Fi
+            </dt>
+            <dd class="home__informative__services-item-description">
+              All of our accommodations have free internet.
+            </dd>
+          </div>
+
+          <!-- data-aos="fade-left" data-aos-once="true" temporariamente removido -->
+          <div class="home__informative__services-item" >
+            <dt class="home__informative__services-item-tittle">
+              <span class="home__informative__services-icon material-icons-outlined">dry_cleaning</span>
+              Cleaning Service
+            </dt>
+            <dd class="home__informative__services-item-description">
+              We have a cleaning service, if the guest needs a new cleaning, you can request more.
+            </dd>
+          </div>
+
+          <div class="home__informative__services-item" >
+            <dt class="home__informative__services-item-tittle">
+              <span class="home__informative__services-icon material-icons-outlined">sanitizer</span>
+              Amenities
+            </dt>
+            <dd class="home__informative__services-item-description">
+              Each accommodation has personal hygiene products, if necessary you can request more.
+            </dd>
+          </div>
+
+          <div class="home__informative__services-item" >
+            <dt class="home__informative__services-item-tittle">
+              <span class="home__informative__services-icon material-icons-outlined">airport_shuttle</span>
+              Transfer
+            </dt>
+            <dd class="home__informative__services-item-description">
+              Our accommodation provides an airport transfer service at an additional cost.
+            </dd>
+          </div>
+
+          <div class="home__informative__services-item" >
+            <dt class="home__informative__services-item-tittle">
+              <span class="home__informative__services-icon material-icons-outlined">deck</span>
+              Itenerary
+            </dt>
+            <dd class="home__informative__services-item-description">
+              Do you want to know all the secrets of Porto? We will pinpoint in your map the most wonderful places.
+            </dd>
+          </div>
+
+        </dl>
+
+      </div>
+
+    </div>
+
+
+
+    </section>
+
+    <!-- gallery -->
+    <section class="gallery">
+
+      <div class="gallery-container wrapper-l">
+
+        <h2 class="gallery__title t-h2">Gallery</h2>
+
+        <div class="gallery__display">
+
+          <picture id="gallery-picture-1" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-2" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-3" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-4" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-5" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-6" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-7" class="gallery__display__item" animation="on">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-8" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-9" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-10" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-11" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-12" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-13" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-14" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+          <picture id="gallery-picture-15" class="gallery__display__item">
+            <a data-fancybox="gallery" class="gallery__display__item-link">
+              <img class="gallery__display__item-image">
+            </a>
+          </picture>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+
+      <!-- Map -->
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.3680659749475!2d-8.60268294308111!3d41.146598629425704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2464ee5f8f57db%3A0x26aefeadb22ae3be!2sCity%20View%20-%20Santo%20Idelfonso!5e0!3m2!1spt-PT!2spt!4v1622913579773!5m2!1spt-PT!2spt"
+          alt="Map location" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Title -->
+      <h2 class="footer__title t-h2">Contact us</h2>
+
+      <!-- Form -->
+      <form class="footer__contact-form">
+        <ul>
+          <li>
+            <label for="contact-name">Name:</label>
+            <input class="footer__contact-form__text-input" type="text" id="contact-name" name="user_name" alt="Name"
+              autocomplete="off" required>
+          </li>
+          <li>
+            <label for="contact-mail">E-mail:</label>
+            <input class="footer__contact-form__text-input" type="email" id="contact-mail" name="user_email" alt="Email"
+              autocomplete="off" required>
+          </li>
+          <li>
+            <label for="contact-msg">Message:</label>
+            <textarea class="footer__contact-form__text-input" id="contact-msg" name="user_message" alt="Message"
+              rows="4" maxlength="300" required></textarea>
+          </li>
+          <li>
+            <input class="footer__contact-submit" type="submit" alt="Send" value="Send">
+          </li>
+        </ul>
+      </form>
+
+      <!-- Info -->
+      <div class="footer__info">
+        <ul class="footer__info__list">
+          <li class="footer__info__list__item">
+            <h3>ADRESS</h3>
+            <p>R. de Santo Ildefonso 371, 4000-222 Porto</p>
+          </li>
+
+          <li class="footer__info__list__item">
+            <h3>EMAIL</h3>
+            <p>cityviewoporto@gmail.com</p>
+          </li>
+
+          <li class="footer__info__list__item">
+            <h3>CALL</h3>
+            <p>+351 916357207</p>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div class="footer__social">
+
+        <ul class="footer__social__list">
+          <li class="footer__social__list__item">
+            <a class="footer__social__list__item-link facebook"
+              href="https://www.facebook.com/Oportocityview-487815831378829">
+              <i class="footer__social__list__item-icon fab fa-facebook-f"></i>
+            </a>
+          </li>
+
+          <li class="footer__social__list__item">
+            <a class="footer__social__list__item-link whatsapp" href="https://wa.me/351916357207">
+              <i class="footer__social__list__item-icon fab fa-whatsapp"></i>
+            </a>
+          </li>
+
+
+          <li class="footer__social__list__item">
+            <a class="footer__social__list__item-link instagram" href="https://www.instagram.com/oporto_city_view/">
+              <i class="footer__social__list__item-icon fab fa-instagram"></i>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="js/plugins.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/header-menu.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/home-range-slider.js"></script>
+  <script src="js/gallery.js"></script>
+
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

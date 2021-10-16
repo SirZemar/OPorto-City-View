@@ -1,0 +1,57 @@
+.accommodations-container {
+    width: 100vw;
+    
+}
+
+.accommodations__card {
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    /* height: calc(50vw); */
+    aspect-ratio: 2/1;
+}
+
+.accommodations__card:nth-child(1) { 
+    background-image: linear-gradient(180deg, rgba(238,33,33,0) 75%, rgba(0,0,0,1) 100%),
+    url(../img/appartments/ceuta/_MG_4821.jpg);
+}
+
+.accommodations__card:nth-child(2) {
+    background-image: linear-gradient(180deg, rgba(238,33,33,0) 75%, rgba(0,0,0,1) 100%), url(../img/appartments/santa-catarina/_MG_2132.jpg);
+}
+
+.accommodations__card:nth-child(3) {
+    background-image: linear-gradient(180deg, rgba(238,33,33,0) 75%, rgba(0,0,0,1) 100%), url(../img/appartments/sao-lazaro/_MG_4955.jpg);
+}
+
+.accommodations__card__info {
+   display: flex;
+   justify-content: space-between;
+   flex: 1;
+   font-size: 2em;
+   padding: 0.5em;
+}
+
+.accommodations__card__info p{
+    margin: 0;
+}
+
+.accommodations__card__info__name {
+    color: white;
+}
+
+.accommodations__card__info__price {
+    color: white;
+}
+
+@media (min-width: 769px) {
+
+    .accommodations-container {
+    }
+    .accommodations__card {
+        aspect-ratio: 6 / 1;
+    }
+}
