@@ -577,5 +577,5 @@ document.addEventListener("click", closeCalendarOutClick);
 
 
 $('.home__reservations__search').click(() => {
-    $('.home__reservations__search').attr('href', `href', `https://www.airbnb.pt/s/homes?host_id=51447621&guests=${getGuestValue()}&checkin=${checkInStr}&checkout=${checkOutStr}`);
+    $('.home__reservations__search').attr('href', `https://www.airbnb.pt/s/homes?host_id=51447621&guests=${getGuestValue()}&checkin=${checkInStr}&checkout=${checkOutStr}`);
 });
