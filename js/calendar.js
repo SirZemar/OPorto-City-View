@@ -577,5 +577,5 @@ document.addEventListener("click", closeCalendarOutClick);
 
 
 $('.home__reservations__search').click(() => {
-    $('.home__reservations__search').attr('href', `https://www.airbnb.pt/s/Porto/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_dates%5B%5D=july&flexible_trip_dates%5B%5D=june&flexible_trip_lengths%5B%5D=weekend_trip&date_picker_type=calendar&checkin=${checkInStr}&checkout=${checkOutStr}&adults=${getGuestValue()}&query=Porto&place_id=ChIJwVPhxKtlJA0RvBSxQFbZSKY&disable_auto_translation=false&source=structured_search_input_header&search_type=autocomplete_click`);
+    $('.home__reservations__search').attr('href', `href', `https://www.airbnb.pt/s/homes?host_id=51447621&guests=${getGuestValue()}&checkin=${checkInStr}&checkout=${checkOutStr}`);
 });
